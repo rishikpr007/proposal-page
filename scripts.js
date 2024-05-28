@@ -5,11 +5,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Function to swap buttons' text and colors
     function swapButtons() {
-        // Swap the buttons' text and colors
+        // Swap the buttons' text
         var tempText = noButton.innerText;
         noButton.innerText = yesButton.innerText;
         yesButton.innerText = tempText;
 
+        // Swap the buttons' background colors
         var tempColor = noButton.style.backgroundColor;
         noButton.style.backgroundColor = yesButton.style.backgroundColor;
         yesButton.style.backgroundColor = tempColor;
