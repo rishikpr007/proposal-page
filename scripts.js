@@ -16,9 +16,16 @@ document.addEventListener('DOMContentLoaded', function() {
         yesButton.style.backgroundColor = tempColor;
     }
 
-    // Add event listener for mouse enter events to swap buttons
-    noButton.addEventListener('mouseenter', swapButtons);
-    yesButton.addEventListener('mouseenter', swapButtons);
+    // Add event listener for mouse enter events to swap buttons and colors
+    noButton.addEventListener('mouseenter', function() {
+        swapButtons();
+        noButton.style.backgroundColor = getRandomColor();
+    });
+
+    yesButton.addEventListener('mouseenter', function() {
+        swapButtons();
+        yesButton.style.backgroundColor = getRandomColor();
+    });
 
     // Add event listener for clicking the "Yes" button
     yesButton.addEventListener('click', function() {
@@ -26,7 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
         messageContainer.innerText = 'Thank you so much dear';
     });
 
-    // Set initial background colors of buttons
-    yesButton.style.backgroundColor = 'green';
-    noButton.style.backgroundColor = 'red';
+    // Function to generate random color
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
 });
