@@ -12,10 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
         yesButton.style.backgroundColor = 'red';
     }
 
-    // Add event listeners for mouse enter and leave events
-    noButton.addEventListener('mouseenter', swapButtons);
-    yesButton.addEventListener('mouseenter', swapButtons);
-
     // Function to reset buttons' text and colors
     function resetButtons() {
         // Reset the buttons' text and colors
@@ -24,6 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
         noButton.innerText = 'No';
         noButton.style.backgroundColor = 'red';
     }
+
+    // Add event listeners for mouse enter events to swap buttons
+    noButton.addEventListener('mouseenter', swapButtons);
+    yesButton.addEventListener('mouseenter', swapButtons);
 
     // Add event listeners for mouse leave events to reset buttons
     noButton.addEventListener('mouseleave', resetButtons);
