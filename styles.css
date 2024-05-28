@@ -28,6 +28,16 @@ button {
     transition: background-color 0.3s;
 }
 
+#yesButton {
+    background-color: green;
+    color: white;
+}
+
+#noButton {
+    background-color: red;
+    color: white;
+}
+
 button:hover {
     background-color: #ddd;
 }
