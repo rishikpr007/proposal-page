@@ -6,28 +6,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Function to swap buttons' text and colors
     function swapButtons() {
         // Swap the buttons' text and colors
-        noButton.innerText = 'Yes';
-        noButton.style.backgroundColor = 'green';
-        yesButton.innerText = 'No';
-        yesButton.style.backgroundColor = 'red';
-    }
+        var tempText = noButton.innerText;
+        noButton.innerText = yesButton.innerText;
+        yesButton.innerText = tempText;
 
-    // Function to reset buttons' text and colors
-    function resetButtons() {
-        // Reset the buttons' text and colors
-        yesButton.innerText = 'Yes';
-        yesButton.style.backgroundColor = 'green';
-        noButton.innerText = 'No';
-        noButton.style.backgroundColor = 'red';
+        var tempColor = noButton.style.backgroundColor;
+        noButton.style.backgroundColor = yesButton.style.backgroundColor;
+        yesButton.style.backgroundColor = tempColor;
     }
 
     // Add event listeners for mouse enter events to swap buttons
     noButton.addEventListener('mouseenter', swapButtons);
     yesButton.addEventListener('mouseenter', swapButtons);
-
-    // Add event listeners for mouse leave events to reset buttons
-    noButton.addEventListener('mouseleave', resetButtons);
-    yesButton.addEventListener('mouseleave', resetButtons);
 
     // Add event listener for clicking the "Yes" button
     yesButton.addEventListener('click', function() {
