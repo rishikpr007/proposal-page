@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         yesButton.style.backgroundColor = tempColor;
     }
 
-    // Add event listeners for mouse enter events to swap buttons
+    // Add event listener for mouse enter events to swap buttons
     noButton.addEventListener('mouseenter', swapButtons);
     yesButton.addEventListener('mouseenter', swapButtons);
 
@@ -25,4 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Display a message when the "Yes" button is clicked
         messageContainer.innerText = 'Thank you so much dear';
     });
+
+    // Set initial background colors of buttons
+    yesButton.style.backgroundColor = 'green';
+    noButton.style.backgroundColor = 'red';
 });
